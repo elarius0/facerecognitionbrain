@@ -95,3 +95,5 @@ render () {
     );
 
 }
+
+export default App;
