@@ -76,7 +76,7 @@ render () {
                 params={particlesOptions}
                 />
 
-      <Navigation />
+          <Navigation />
           <Logo />
           <Rank />
           <ImageLinkForm 
@@ -92,7 +92,6 @@ render () {
 
            />
     </div>
+    );
 
-
-export default App;
 }
