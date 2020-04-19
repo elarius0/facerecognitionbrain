@@ -148,6 +148,38 @@ class App extends Component {
       </div>
     );
   }
+    app.models
+      .predict(
+        Clarifai.FACE_DETECT_MODEL,
+        this.state.input)
+    .then(response => this.displayFaceBox(this.calculateFaceLocation (response)))      
+    .catch (err => console.log(err));
+    }
+
+render () {
+ return(
+    <div className="App">
+      <Particles className ='particles'
+                params={particlesOptions}
+                />
+
+          <Navigation />
+          <Logo />
+          <Rank />
+          <ImageLinkForm 
+          onInputChange={this.onInputChange} 
+          onButtonSubmit={this.onButtonSubmit}
+
+          />
+           
+          
+           <FaceRecognition 
+           box={this.state.box} 
+           imageUrl= {this.state.imageUrl} 
+
+           />
+    </div>
+    );
 }
 
 export default App;
